@@ -8,20 +8,30 @@ import api from "./api.js";
 export default function Cadastro() {
 
   const [inputs, setInputs] = useState();
-
-const handleChange = (event) => {
-  const name =  event.target.name;
-  const value = event.target.value;
   
-  setInputs(values => ({...values, [name]: value}));
-}
-const handleSubmit = (event) => {
-  event.preventDefault();
-  api.post('/salvar', inputs).then(function(response){
-        console.log(response);
-        
-    });
-}
+  const handleChange = (event) => {
+    const name =  event.target.name;
+    const value = event.target.value;
+    
+    setInputs(values => ({...values, [name]: value}));
+
+  }
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+      api.post('/salvar', inputs).then(function(response){
+            console.log(response);
+            
+        });
+  }
+
+  const handleReset = (event) =>{
+    event.preventDefault();
+    //setInputs(null);
+    //inputs.cnpj = '';
+    console.log(inputs);
+  }
+
 
     return (
             <div className="container">
@@ -30,7 +40,7 @@ const handleSubmit = (event) => {
                   <label>Formulário de Cadastro</label>
                   </div>
                 </div>
-              <form onSubmit={handleSubmit}>
+              <form >
                 <div className="row">
                   <div className="form-group col-sm-4">
                     <label>CNPJ</label>
@@ -62,7 +72,7 @@ const handleSubmit = (event) => {
                   </div>
                   <div className="form-group col-sm-2">
                     <label>UF</label>
-                    <select className="form-control" name="uf" onChange={handleChange}>
+                    <select className="form-select" name="uf" onChange={handleChange}>
                       <option defaultValue="0"></option>
                       <option value="AC">AC</option>
                       <option value="AL">AL</option>
@@ -78,7 +88,7 @@ const handleSubmit = (event) => {
                   </div>
                   <div className="form-group col-sm-4">
                     <label>Cidade</label>
-                    <select className="form-control" name="cidade" onChange={handleChange}>
+                    <select className="form-select" name="cidade" onChange={handleChange}>
                       <option defaultValue="0"></option>
                       <option value="Belo Horizonte">Belo Horizonte</option>
                       <option value="Brasília">Brasília</option>
@@ -93,8 +103,8 @@ const handleSubmit = (event) => {
                     </select>
                   </div>
                 </div>
-                  <button className="btn btn-primary" >Salvar</button>
-                  <button className="btn btn-secondary">Cancelar</button>
+                  <button onClick={handleSubmit} className="btn btn-primary" >Salvar</button>
+                  <button onClick={handleReset} className="btn btn-secondary">Cancelar</button>
               </form>
             </div>
     )

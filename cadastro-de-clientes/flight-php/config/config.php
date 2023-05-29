@@ -7,4 +7,3 @@ header("Access-Control-Allow-Headers: Content-Type");
 
 Flight::register('db', 'PDO', array('mysql:host=localhost;dbname=teste','root',''));
 
-$db = Flight::db();

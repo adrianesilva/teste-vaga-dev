@@ -16,7 +16,7 @@ form{
     margin-left: 160px;
 }
 
-.form-control{
+.form-control, .form-select{
     border: 1px solid #2e3944 !important;
 }
 
