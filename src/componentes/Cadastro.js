@@ -8,14 +8,14 @@ import api from "./api.js";
 export default function Cadastro() {
 
   const [inputs, setInputs] = useState();
-  const cnpj = useRef();
-  const empresa = useRef();
-  const cep = useRef();
-  const endereco = useRef();
-  const numero = useRef();
-  const bairro = useRef();
-  const uf = useRef();
-  const cidade = useRef();
+  let cnpj = useRef();
+  let empresa = useRef();
+  let cep = useRef();
+  let endereco = useRef();
+  let numero = useRef();
+  let bairro = useRef();
+  let uf = useRef();
+  let cidade = useRef();
   
   //Constante para salvar os valores que foram preenchidos no formulario
   const handleChange = (event) => {
