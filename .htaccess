@@ -1,5 +1,5 @@
 <IfModule mod_rewrite.c>
 RewriteEngine On 
-RewriteBase /cadastro-de-clientes/flight-php/
+RewriteBase /flight-php/
 RewriteRule ^(.*)$ index.php [L]
 </IfModule>

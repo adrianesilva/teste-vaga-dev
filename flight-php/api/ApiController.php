@@ -33,14 +33,14 @@ class ApiController{
         $dadosJson = file_get_contents("php://input");
         $dados = json_decode($dadosJson,true);
 
-        $cnpj = (($dados['cnpj'])) ?: '';
-        $empresa = (($dados['empresa'])) ?: '';
-        $cep = (($dados['cep'])) ?: '';
-        $endereco = (($dados['endereco'])) ?: '';
-        $numero = (($dados['numero'])) ?: 0;
-        $bairro = (($dados['bairro'])) ?: '';
-        $uf = (($dados['uf'])) ?: '';
-        $cidade = (isset($dados['cidade'])) ?: '';
+        $cnpj = (isset($dados['cnpj']) ? $dados['cnpj'] : '');
+        $empresa = (isset($dados['empresa']) ? $dados['empresa'] : '');
+        $cep = (isset($dados['cep']) ? $dados['cep'] : '');
+        $endereco = (isset($dados['endereco']) ? $dados['endereco'] : '');
+        $numero = (isset($dados['numero']) ? $dados['numero'] : 0);
+        $bairro = (isset($dados['bairro']) ? $dados['bairro'] : '');
+        $uf = (isset($dados['uf']) ? $dados['uf'] : '');
+        $cidade = (isset($dados['cidade']) ? $dados['cidade'] : '');
 
         //Verificação se o cnpj e empresa estão preenchidos
         if($cnpj != '' && $empresa !=''){

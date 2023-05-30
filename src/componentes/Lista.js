@@ -2,17 +2,15 @@ import React, { useEffect, useState } from "react";
 import './Lista.css';
 import api from "./api.js";
 
+// Componente com a Lista dos Clientes Cadastrados
 
-/*
-  Componente com a Lista dos Clientes Cadastrados
-*/
 export default function Lista() {
 
     const [clientes, setClientes] = useState([]);
 
-    /*
-        Consultando a lista de Clientes, utilizando a api criada
-    */
+    
+    // Consultando a lista de Clientes, utilizando a api criada
+    
     useEffect(() => {
         api
         .get("/listar")
@@ -23,7 +21,7 @@ export default function Lista() {
         .catch((err) => {
            console.log("erro:" + err);
         });
-    }, []);
+    }, [clientes]);
 
     return (
             <div className="container">
@@ -41,7 +39,7 @@ export default function Lista() {
                              <tr key={cliente.id} className="text-center">
                                 <td>{cliente.cnpj}</td>
                                 <td>{cliente.empresa}</td>
-                                <td>editar</td>
+                                <td><a href="#">editar</a></td>
                              </tr>
                             ))}
                     </tbody>
