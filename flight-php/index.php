@@ -10,7 +10,7 @@ Flight::route('/', function(){});
 
 Flight::route('GET /listar', ['ApiController' , 'listar']);
 
-Flight::route('/salvar', ['ApiController' , 'salvar']);
+Flight::route('POST|OPTIONS /salvar', ['ApiController' , 'salvar']);
 
 //Flight::route('PUT /editar', function(){});
 
