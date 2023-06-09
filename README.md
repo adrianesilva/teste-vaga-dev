@@ -23,8 +23,9 @@ Na pasta componentes, estão os scripts js e css referente ao Formulário de Cad
 A pasta flight-php refere-se a API feita com o Framework FlightPHP. 
 Nela contém a pasta api, com o script ApiController.php que é a classe com as funções que serão chamadas nas rotas.
 Foram criadas duas rotas no index.php:
-/listar - Para listar os Clientes
-/salvar - Para Salvar os Clientes
+- /listar - Para listar os Clientes
+- /salvar - Para Salvar os Clientes
+
 A pasta config possui o script config.php que refere-se a configurações do projeto.
 
 
